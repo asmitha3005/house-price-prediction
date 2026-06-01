@@ -4,6 +4,6 @@ WORKDIR /app
 
 COPY . .
 
-RUN pip install pandas numpy scikit-learn
+RUN pip install -r requirements.txt
 
-CMD ["python", "app.py"]
+CMD ["streamlit", "run", "app.py", "--server.port=10000", "--server.address=0.0.0.0"]
